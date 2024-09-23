@@ -1,17 +1,84 @@
 package org.example;
+import java.util.Scanner;
 
+class MathOperations {
+
+    public Integer computeFactorial(Integer num) {
+        if (num == 1 || num == 0) return 1;
+        else if (num < 1) return -1;
+        return num * computeFactorial(num - 1);
+    }
+
+    public Double raiseToPower(Double base, Double exponent) {
+        return Math.pow(base, exponent);
+    }
+
+    public Double calculateLog(Double number) {
+        if (number <= 0) return Double.NaN;
+        return Math.log(number);
+    }
+
+    public Double findSquareRoot(Double number) {
+        if (number < 0) return Double.NaN;
+        return Math.sqrt(number);
+    }
+}
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Welcome to the Math Tool!");
+        int option;
+        Scanner input = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        MathOperations mathOperations = new MathOperations();
+
+        while (true) {
+//            System.out.println("--------------------------------------------------");
+            System.out.println("Please select an operation:");
+            System.out.println("1. Compute the Square Root of a Number");
+            System.out.println("2. Calculate the Factorial of an Integer");
+            System.out.println("3. Find the Natural Logarithm of a Positive Number");
+            System.out.println("4. Raise a Number to a Power");
+            System.out.println("5. Exit the Program");
+            System.out.print("Your selection: ");
+            option = input.nextInt();
+//            System.out.println("--------------------------------------------------");
+
+            switch (option) {
+                case 1:
+                    System.out.print("Enter a positive number to find its square root: ");
+                    Double number = input.nextDouble();
+                    Double sqrtResult = mathOperations.findSquareRoot(number);
+                    System.out.println("Square Root: " + sqrtResult);
+                    break;
+                case 2:
+                    System.out.print("Enter a positive integer to calculate its factorial: ");
+                    Integer integerInput = input.nextInt();
+                    Integer factorialResult = mathOperations.computeFactorial(integerInput);
+                    System.out.println("Factorial: " + factorialResult);
+                    break;
+                case 3:
+                    System.out.print("Enter a positive number to calculate its natural logarithm: ");
+                    Double logInput = input.nextDouble();
+                    Double logResult = mathOperations.calculateLog(logInput);
+                    System.out.println("Natural Logarithm: " + logResult);
+                    break;
+                case 4:
+                    System.out.print("Enter the base and the exponent separated by a space: ");
+                    Double base = input.nextDouble();
+                    Double exponent = input.nextDouble();
+                    Double powerResult = mathOperations.raiseToPower(base, exponent);
+                    System.out.println("Result: " + powerResult);
+                    break;
+                case 5:
+                    System.out.println("Exiting the Calculator. Goodbye!");
+                    input.close();
+                    return;
+                default:
+                    System.out.println("Invalid selection. Please try again.");
+                    break;
+            }
         }
     }
 }
