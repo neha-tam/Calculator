@@ -1,30 +1,6 @@
 package org.example;
 import java.util.Scanner;
 
-//class MathOperations {
-//
-//    public Integer computeFactorial(Integer num) {
-//        if (num == 1 || num == 0) return 1;
-//        else if (num < 1) return -1;
-//        return num * computeFactorial(num - 1);
-//    }
-//
-//    public Double raiseToPower(Double base, Double exponent) {
-//        return Math.pow(base, exponent);
-//    }
-//
-//    public Double calculateLog(Double number) {
-//        if (number <= 0) return Double.NaN;
-//        return Math.log(number);
-//    }
-//
-//    public Double findSquareRoot(Double number) {
-//        if (number < 0) return Double.NaN;
-//        return Math.sqrt(number);
-//    }
-//}
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Calculator Tool!");
