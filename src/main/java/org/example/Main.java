@@ -11,7 +11,7 @@ public class Main {
 
         while (true) {
 //            System.out.println("--------------------------------------------------");
-            System.out.println("Please select an operation:");
+            System.out.println("Select an operation:");
             System.out.println("1. Compute the Square Root of a Number");
             System.out.println("2. Calculate the Factorial of an Integer");
             System.out.println("3. Find the Natural Logarithm of a Positive Number");
